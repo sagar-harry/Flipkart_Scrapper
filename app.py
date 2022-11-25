@@ -20,7 +20,7 @@ def retrieve_comments():
             comments = run_program(phone_name=phone_name)
             return render_template("result.html", comments=comments)
 
-        elif request.json:
+        elif request.is_json:
             phone_name = request.json["phone_name"]
             comments = run_program(phone_name=phone_name)
             return jsonify({"Result":comments})
@@ -31,10 +31,13 @@ def retrieve_comments():
             comments = run_program(phone_name=phone_name)
             return render_template("result.html", comments=comments)
 
-        elif request.json:
+        elif request.is_json:
             phone_name = request.json["phone_name"]
             comments = run_program(phone_name=phone_name)
             return jsonify({"Result":comments})
+
+        else:
+            return redirect(url_for("home"))
 
     else:
         return {"result": "error"}
