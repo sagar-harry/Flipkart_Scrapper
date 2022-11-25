@@ -3,3 +3,5 @@ This app retrieves comments on various models of phones from Flipkart website. C
 
 
 App link: https://flipkart-comment-scrapper.herokuapp.com/
+
+Only subset of data is displayed due to the server limits, the limitations can be removed from scraper file if needed.
