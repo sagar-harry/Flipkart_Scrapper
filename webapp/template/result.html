@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title> Flipkart comment Scraper</title>
+{% endblock %}
+
+{% block body %}
+<h2>Comments</h2>
+<div class="Comments">
+    <div class="form">
+        <table>
+            <thead>
+                <tr>
+                    <th>User name</th>
+                    <th>Rating</th>
+                    <th>Comment Heading</th>
+                    <th>Comment</th>
+                    <th>Likes</th>
+                    <th>Dislikes</th>
+                    <th>Date of comment</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for comment in comments %}
+                <tr>
+                    <td>{{comment["user name"]}}</td>
+                    <td>{{comment["rating"]}}</td>
+                    <td>{{comment["comment title"]}}</td>
+                    <td>{{comment["comment"]}}</td>
+                    <td>{{comment["likes"]}}</td>
+                    <td>{{comment["dislikes"]}}</td>
+                    <td>{{comment["date of comment"]}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}
