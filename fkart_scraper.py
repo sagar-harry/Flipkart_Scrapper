@@ -89,6 +89,9 @@ def retrieve_comments(comments_page_link, product_name):
 
 def run_program(phone_name):
     product_page_links = retrieve_all_phones_links(phone_name)
+    # Reducing number of comments
+    if len(product_page_links) >3:
+        product_page_links = product_page_links[:3]
     for i,product_page_link in enumerate(product_page_links):
         product_page_soup, product_name = retrieve_product_page(product_page_link)
         if i==0:
